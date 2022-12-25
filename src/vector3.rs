@@ -22,8 +22,8 @@ impl Vector3 {
     /// a number and is expressed using the "dot(..)" function.  To be clear the return value
     /// is not a vector but a single scalar value.
     /// 
-    /// Algebraically it is represented between brackets like so: (V, W) where V and W are 
-    /// Vector3. 
+    /// Algebraically it is represented between brackets like so: (V, W) where V and W are Vector3's. 
+    /// 
     /// One method to calculate the dot product is:
     /// dotprod = (Vx * Wx + Vy * Wy + Vz * Wz);      
     /// 
