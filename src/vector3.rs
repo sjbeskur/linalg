@@ -67,6 +67,22 @@ impl Vector3 {
 
 }
 
+trait MultiplyScalar<Rhs = f32> {
+    type Output;
+    fn mul(self, rhs: f32)-> Vector3;
+    
+}
+
+
+impl ops::Mul<f32> for Vector3{
+    type Output = Self;
+    fn mul(self, rhs: f32)-> Vector3{
+        Self { x: self.x * rhs
+            , y: self.y * rhs
+            , z: self.z * rhs 
+        }
+    }
+}
 
 impl ops::Add for Vector3{
     type Output = Vector3;
