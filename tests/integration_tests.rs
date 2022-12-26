@@ -80,12 +80,19 @@ fn test_equality(){
 }
 
 #[test]
-fn test_mult_scalar(){
+fn test_multiply_by_scalar(){
     let input = Vector3::new(5.0,-5.0,5.0);
     let expected = Vector3::new(25.0,-25.0,25.0);
     let test = input * 5.0;
     //let test = 5.0 * input; // This no worky
     assert_eq!(test, expected);
-
 }
 
+#[test]
+fn test_divide_by_scalar(){
+    let input = Vector3::new(25.0,-25.0,25.0);
+    let expected = Vector3::new(5.0,-5.0,5.0);
+    let test = input / 5.0;
+    //let test = 5.0 * input; // This no worky
+    assert_eq!(test, expected);
+}

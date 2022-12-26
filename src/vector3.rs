@@ -67,13 +67,8 @@ impl Vector3 {
 
 }
 
-trait MultiplyScalar<Rhs = f32> {
-    type Output;
-    fn mul(self, rhs: f32)-> Vector3;
-    
-}
-
-
+/// Scalar multiplication between vector and f32
+/// 
 impl ops::Mul<f32> for Vector3{
     type Output = Self;
     fn mul(self, rhs: f32)-> Vector3{
@@ -84,6 +79,20 @@ impl ops::Mul<f32> for Vector3{
     }
 }
 
+/// Scalar multiplication between vector and f32
+/// 
+impl ops::Div<f32> for Vector3{
+    type Output = Self;
+    fn div(self, rhs: f32)-> Vector3{
+        Self { x: self.x / rhs
+            , y: self.y / rhs
+            , z: self.z / rhs 
+        }
+    }
+}
+
+/// Addition operations 
+/// 
 impl ops::Add for Vector3{
     type Output = Vector3;
     fn add(self, rhs: Vector3)-> Vector3{
@@ -95,6 +104,8 @@ impl ops::Add for Vector3{
     }
 }
 
+/// Subtraction operations
+/// 
 impl ops::Sub for Vector3{
     type Output = Vector3;
     fn sub(self, rhs: Vector3)-> Vector3{
