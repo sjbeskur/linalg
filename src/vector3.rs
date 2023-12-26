@@ -114,6 +114,18 @@ impl ops::Sub for Vector3{
             y: self.y - rhs.y,
             z: self.z - rhs.z,
         }                
+    }    
+}
+
+impl ops::Neg for Vector3{
+    type Output = Vector3;
+
+    fn neg(self) -> Self::Output {
+        Self{
+            x: -self.x,
+            y: -self.y,
+            z: -self.z,
+        }
     }
 }
 
@@ -124,7 +136,6 @@ impl PartialEq for Vector3{
         self.z == other.z
     }
 }
-
 
 impl std::fmt::Display for Vector3{
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
